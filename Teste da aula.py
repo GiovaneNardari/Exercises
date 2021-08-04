@@ -1,0 +1,12 @@
+pagamento = 100.0
+valor_compra = 17.0
+troco = pagamento - valor_compra
+cdl_20 = troco // 20
+cdl_10 = (troco - (cdl_20 * 20)) // 10
+cdl_5 = (troco - (cdl_20 * 20) - (cdl_10 * 10)) // 5
+cdl_1 = (troco - (cdl_20 * 20) - (cdl_10 * 10) - (cdl_5 * 5)) // 1
+print ("Troco=", troco)
+print ("Cédulas de 20=", cdl_20)
+print ("Cédulas de 10=", cdl_10)
+print ("Cédulas de 5=", cdl_5)
+print ("Cédulas de 1=", cdl_1)

@@ -1,0 +1,39 @@
+#entrada
+sl1 = float(input('Insira o Valor do Sálario Bruto: '))
+
+#inss
+if sl1 <= 1045:
+    inss = sl1 * 0.075
+    sl2 = sl1 * 0.925
+elif sl1 <= 2089.60:
+    inss = sl1 * 0.09
+    sl2 = sl1 * 0.91
+elif sl1 <= 3134.40:
+    inss = sl1 * 0.12
+    sl2 = sl1 * 0.88
+else:
+    inss = sl1 * 0.14
+    sl2 = sl1 * 0.86
+
+#IR
+if sl2 <= 1903.98:
+    ir = 0
+    sl3 = sl2
+elif sl2 <= 2826.65:
+    ir = sl2 * 0.075 - 142.80
+    sl3 = sl2 - ir
+elif sl2 <= 3751.06:
+    ir = sl2 * 0.15 - 354.80
+    sl3 = sl2 - ir
+elif sl2 <= 4664.68:
+    ir = sl2 * 0.225 - 636.13
+    sl3 = sl2 - ir
+else:
+    ir = sl2 * 0.275 - 869.36
+    sl3 = sl2 - ir
+
+#Saídas
+print(f'Salário Bruto: R$ {sl1:.2f}'.replace('.', ","))
+print(f'Valor do INSS: R$ {inss:.2f}'.replace('.', ","))
+print(f'Valor do IR: R$ {ir:.2f}'.replace('.', ","))
+print(f'Salário Líquido: R$ {sl3:.2f}'.replace('.', ","))
